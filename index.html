@@ -224,6 +224,22 @@
         
 
     </script>
+
+
+    <script>
+fetch("https://formspree.io/f/mzdayqzp", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: "Site ziyaret edildi",
+    page: window.location.href,
+    userAgent: navigator.userAgent,
+    time: new Date().toLocaleString()
+  })
+});
+    </script>
     
 </body>
 </html>
