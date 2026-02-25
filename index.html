@@ -221,30 +221,12 @@
         
         
         
-        // --- Patron Bildirim Sistemi ---
-window.addEventListener('load', function() {
-    const FORMSPREE_ID = "https://formspree.io/f/mzdayqzp"; // Formspree'den aldığın ID'yi buraya yaz
-
-    fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            subject: "Mektup Açıldı!",
-            message: "Patron, zarf şu an biri tarafından açıldı ve okundu.",
-            timestamp: new Date().toLocaleString('tr-TR'),
-            userAgent: navigator.userAgent // Hangi cihazdan açıldığını görmek istersen
-        })
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log("Bildirim gönderildi, Patron.");
-        }
-    })
-    .catch(error => console.log("Bağlantı hatası:", error));
-});
+        // 🔹 Sayfa ziyaret bildirimi
+    fetch("https://formspree.io/f/mzdayqzp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mesaj: "Sayfa ziyaret edildi" })
+    });
 
     </script>
     
